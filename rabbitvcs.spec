@@ -2,7 +2,7 @@
 
 Name:		rabbitvcs  
 Version:	0.13.3
-Release:	%mkrel 1
+Release:	%mkrel 2
 
 Summary:	Graphical user interface to version control systems
 Group:		File tools
