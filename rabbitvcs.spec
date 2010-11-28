@@ -1,14 +1,22 @@
-%define oname RabbitVCS
+%define oname	RabbitVCS
+
+#set for prereleases, comment for others
+%define prerel	beta1
+
+%define ver	0.14
+%define rel	1
+
+%define over 	%{ver}%{?prerel:%prerel}
 
 Name:		rabbitvcs  
-Version:	0.13.3
-Release:	%mkrel 2
+Version:	%{ver}
+Release:	%mkrel %{?prerel:0.%prerel.}%{rel}
 
 Summary:	Graphical user interface to version control systems
 Group:		File tools
 License:	GPLv2+
 URL:		http://www.rabbitvcs.org/
-Source0:	http://rabbitvcs.googlecode.com/files/%{name}-%{version}.tar.gz
+Source0:	http://rabbitvcs.googlecode.com/files/%{name}-%{over}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	pygtk2.0-devel >= 2.12
 BuildRequires:	python-devel
@@ -27,6 +35,7 @@ Requires:	pygtk2.0
 Requires:	python-pysvn
 Requires:	python-configobj
 Requires:	subversion
+Requires:	python-dulwich
 BuildArch:	noarch
 
 %description core
@@ -68,7 +77,7 @@ straightforward access to the version control systems you use. This is the
 extension for command line interface.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{over}
 
 %build
 python setup.py build
@@ -100,10 +109,10 @@ rm -rf %{buildroot}
 %files core -f %{oname}.lang
 %defattr(-,root,root,-)
 %doc AUTHORS MAINTAINERS README
-%{_datadir}/%{name}/
+%{_datadir}/%{name}
 %{_datadir}/icons/hicolor/scalable/*/*.svg
-%{python_sitelib}/%{name}/
-%{python_sitelib}/%{name}-0.13.2-py%{pyver}.egg-info
+%{python_sitelib}/%{name}
+%{python_sitelib}/%{name}-%{over}-py%{pyver}.egg-info
 
 %files nautilus
 %defattr(-, root, root,-)
