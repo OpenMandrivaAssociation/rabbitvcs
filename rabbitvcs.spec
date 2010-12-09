@@ -1,12 +1,12 @@
 %define oname	RabbitVCS
 
 #set for prereleases, comment for others
-%define prerel	beta1
+%define prerel	beta2
 
 %define ver	0.14
 %define rel	1
 
-%define over 	%{ver}%{?prerel:%prerel}
+%define over 	%{ver}%{?prerel}
 
 Name:		rabbitvcs  
 Version:	%{ver}
@@ -78,6 +78,9 @@ extension for command line interface.
 
 %prep
 %setup -q -n %{name}-%{over}
+
+#fix version
+sed -i -e 's|beta22|beta2|g' setup.py
 
 %build
 python setup.py build
