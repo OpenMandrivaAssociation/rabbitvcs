@@ -1,7 +1,7 @@
 %define oname	RabbitVCS
 
 #set for prereleases, comment for others
-%define prerel	beta4
+%define prerel	beta5
 
 %define ver	0.14
 %define rel	1
