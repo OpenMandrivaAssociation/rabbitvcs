@@ -1,9 +1,9 @@
 %define oname	RabbitVCS
 
 #set for prereleases, comment for others
-%define prerel	beta5
+#define prerel	beta5
 
-%define ver	0.14
+%define ver	0.14.1.1
 %define rel	1
 
 %define over 	%{ver}%{?prerel}
