@@ -3,7 +3,7 @@
 #set for prereleases, comment for others
 #define prerel	beta5
 
-%define ver	0.14.1.1
+%define ver	0.14.2.1
 %define rel	1
 
 %define over 	%{ver}%{?prerel}
@@ -17,7 +17,6 @@ Group:		File tools
 License:	GPLv2+
 URL:		http://www.rabbitvcs.org/
 Source0:	http://rabbitvcs.googlecode.com/files/%{name}-%{over}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	pygtk2.0-devel >= 2.12
 BuildRequires:	python-devel
 
