@@ -14,7 +14,7 @@ Release:	%{?prerel:0.%prerel.}%{rel}
 Summary:	Graphical user interface to version control systems
 Group:		File tools
 License:	GPLv2+
-URL:		http://www.rabbitvcs.org/
+URL:		https://www.rabbitvcs.org/
 Source0:	http://rabbitvcs.googlecode.com/files/%{name}-%{over}.tar.bz2
 BuildRequires:	pygtk2.0-devel >= 2.12
 BuildRequires:	python-devel
